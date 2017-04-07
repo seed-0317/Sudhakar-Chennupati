@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.Arrays;
-import java.util.Stack;
-
 public class Lab {
 
 	/*
@@ -13,7 +10,20 @@ public class Lab {
 	*/
 	public static int fibonacci(int n) {
 
-		return 0;
+		int a = 0;
+		int	b = 1;
+		int c;
+		if (n == 0)
+			return a;
+		for (int i = 2; i<=n; i++){
+
+			c = a+b;
+			a = b;
+			b = c;
+
+		}
+
+		return b;
 	}
 
 	/*
@@ -22,7 +32,25 @@ public class Lab {
 	  Don't use built-in sort() method... that would be lame.
 	*/
 	public static int[] sort(int[] array) {
-		return null;
+
+
+		int temp;
+
+		for (int i=0; i<array.length; i++){
+
+			for (int j=i+1; j<array.length;j++) {
+
+				if (array[i] > array[j]){
+
+					temp = array[i];
+					array[i] = array[j]	;
+					array[j] = temp;
+				}
+
+			}
+
+		}
+		return array;
 	}
 
 	/*
@@ -32,7 +60,12 @@ public class Lab {
 	  f(3) = 6
 	*/
 	public static int factorial(int n) {
-		return 0;
+
+	    if (n == 0)
+        {return 1;}
+
+        return n * factorial(n-1);
+
 	}
 
 	/*
@@ -43,7 +76,21 @@ public class Lab {
 	  f([1,2,3,4,5], 3) = [4,5,1,2,3]
 	*/
 	public static int[] rotateLeft(int[] array, int n) {
-		return null;
+
+	    int timeRotated = 0;
+	    while (timeRotated < n){
+
+	        int temp = array[0];
+	        for (int i = 0; i<array.length-1;i++){
+	            array[i]=array[i+1];
+            }
+
+            array[array.length-1] = temp;
+            timeRotated++;
+        }
+
+
+	    return array;
 	}
 
 	/*
@@ -63,7 +110,8 @@ public class Lab {
 	  Return false if not balanced
 	*/
 	public static boolean balancedBrackets(String bracketsString) {
-		return false;
+
+	    return false;
 	}
 
 
